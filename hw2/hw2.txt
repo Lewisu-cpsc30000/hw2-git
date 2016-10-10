@@ -1,0 +1,77 @@
+NAME: Michael Korzon
+LOGIN: korzorro
+
+
+Part two: C Programming
+Problem 1
+
+/* Return the nth bit of x. Assume 0 <= n <= 31 */
+unsigned get_bit(unsigned x, unsigned n) {
+  return (x & (1 << n)) >> n;
+}
+
+/* Set the nth bit of the value of x to v. Assume 0 <= n <=31, and v is 0 or 1 */
+void set_bit(unsigned * x, unsigned n, unsigned v) {
+  *x = (*x & ~(1 << n)) | (v << n);
+}
+
+/* Flip the nth bit of the value of x. Assume 0 <= n <= 31 */
+void flip_bit(unsigned *x, unsigned n) {
+  *x ^=  1 << n;
+}
+
+
+Problem 2
+
+/* Count the zeroes of the first n elements of arr excluding the first element.
+   Assume n < arr.length. */
+int bar(int *arr, unsigned int n) {
+  int sum = 0, i;
+  for (i = n; i > 0; i--) {
+    sum += !(arr[i]); // only adds 1 when arr[i] == 0
+  }
+  return sum;
+}
+
+
+Problem 3
+
+1. 
+/* Swaps the value of two ints outside of this function. */
+void swap(int *x, int*y) {
+  int temp = *x;
+  *x = *y;
+  *y = temp;
+}
+
+2.
+/* Returns the number of bytes in a string. Does not use strlen. */
+int mystrlen(char* str) {
+  int len = 1; // Counting the null terminator
+  while (*str != '\0') {
+    len++;
+    str++;
+  }
+  return len;
+}
+
+
+Problem 4
+
+This function cannot be fixed without redefinining the perameters. Because
+values is an integer pointer, all information about the length of the array
+is lost after passing the array by reference. sizeof(values) is 8 on
+my machine and sizeof(*values) will always be 4 for 32-bit integers. Therefore,
+I cannot iterate over values without adding a parameter for the length of the
+array.
+
+/* Returns the sum of all the elements in values. */
+// Unchanged. See above.
+int sum(int* values) {
+  int sum = 0;
+  for (int i = 0; i < sizeof(values); i++) {
+    sum += *(values + i);
+  }
+  return sum;
+}
+
