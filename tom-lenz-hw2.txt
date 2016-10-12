@@ -1,10 +1,10 @@
-NAME: 
+NAME: Tom Lenz
 
 LOGIN: 
-
+Grade: 14/30
 
 Part two: C Programming
-Problem 1
+Problem 1 (incomplete 5/15)
 
 #include <stdio.h>
 
@@ -24,12 +24,13 @@ int main() {
 
 
 
-Problem 2
+Problem 2 (2/5)
 
 /* 
  * arr is a pointer to an array
  * n is the length
  */
+ // This is not a description of the function.
 int bar(int* arr, unsigned int n) {
 	int sum = 0 , i; // Init sum to 0, i to NULL
 	for(i = n; i > 0; i--) { // Start at the final element
@@ -39,7 +40,7 @@ int bar(int* arr, unsigned int n) {
 }
 
 
-Problem 3
+Problem 3 (5/5)
 1. 
 
 #include <stdio.h>
@@ -65,7 +66,7 @@ int stringLen(char* str) {
 	return index;
 }
 
-Problem 4
+Problem 4 // It doesn't perform the sum of the integrs  2/5
 
 int sum(int* values) {
 	int sum = 0;
