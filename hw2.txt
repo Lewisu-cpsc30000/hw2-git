@@ -1,0 +1,95 @@
+NAME: Nick Berg	
+LOGIN: ChaunceyVonSnufflesTheThird
+
+
+Part two: C Programming
+Problem 1
+a. 
+unsigned getbit(unsigned* x, unsigned n){
+	unsigned temp;
+	temp = x >> n & 1;
+	return temp;
+}
+
+b.
+unsigned setbit(unsigned* x, unsigned n, unsigned c){
+	v = &x;
+}
+
+c. 
+unsigned void flipbit(unsigned* x, unsigned n){
+	unsigned temp;
+	temp = ~&x;
+	&x = temp;
+}
+
+Problem 2
+
+int bar(int *arr, unsigned int n)  # Declare Function to add all ints of an array list
+{
+	int sum = 0, i;					
+		for (i = n; i > 0; i--)		# For loop for function
+	{
+   			sum += !(arr[i]);	# Add Arrays together
+	}
+	return sum;
+}
+
+
+Problem 3
+1. 
+
+//Function to swap integers Problem 3-1
+void swap(int* x, int* y)
+{
+    int* temp;
+    temp = *x;
+    *x = *y;
+    *y = temp;
+}
+
+int main()
+{
+    int* x = 20;
+    int* y = 1;
+
+
+    printf("X = %d, Y = %d\n",x,y);
+
+    swap(&x, &y);
+
+    printf("X = %d, Y = %d\n",x,y);
+
+    return 0;
+}
+
+
+2. 
+//Function measure byte length for a string Problem 3-2
+int mystrlen(char* str){
+	return *str.length;	
+}
+
+int main()
+{
+	char* string;
+	scanf ("Enter String\n");
+	string = scanf;
+	mystrlen(string);
+}
+
+Problem 4
+
+/* Returns the sum of all the elements in VALUES. */  
+int sum(int* values)
+{
+	int sum = 0;
+	for (int i = 0; i < sizeof(values); i++) 
+//fixed for (int i = 0; i < sizeof(*values); i++)
+    	sum += *(values +i);{
+//fixed sum += (*values + i);
+	return sum;							
+															}
+}
+
+
